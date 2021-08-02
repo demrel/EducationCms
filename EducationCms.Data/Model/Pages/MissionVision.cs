@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationCms.Data.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Data.Model.Pages
 {
-    public class Banner
+    public class MissionVision
     {
         public int Id { get; set; }
-        public string TitleFirst { get; set; }
-        public string TitleSecond { get; set; }
-        public string Url { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public int ImageId { get; set; }
-        public bool IsActive { get; set; }
         public AppImage Image { get; set; }
+        public MissionVisionType Type { get; set; }
     }
+
 }
