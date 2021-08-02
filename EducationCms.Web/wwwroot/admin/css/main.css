@@ -1,0 +1,20 @@
+﻿.sidebar {
+    /*    background-color: #44d62c !important;*/
+    background: #05007c !important;
+}
+.navbar.default-layout .navbar-brand-wrapper {
+    background: #05007c !important;
+}
+.form-control.form-control-sm {
+    padding: 0.25rem 1.75rem !important;
+}
+.table td img:not(.thumb-image) {
+    border-radius: 0;
+    width: 23%;
+    height:auto;
+}
+
+.hrStyle {
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b;
+}
