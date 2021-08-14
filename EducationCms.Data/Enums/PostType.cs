@@ -8,10 +8,11 @@ namespace EducationCms.Data.Enums
 {
     public enum PostType
     {
-        Services,
+        English,
         Blog,
         Video,
-        File,
-        Seminar
+        Summary,
+        Seminar,
+        Consulting
     }
 }

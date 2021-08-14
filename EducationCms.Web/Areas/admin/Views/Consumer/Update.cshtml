@@ -1,28 +1,28 @@
-﻿@model EducationCms.Web.Areas.admin.Models.Consumers.ConsumerModel
+﻿@model EducationCms.Web.Areas.admin.Models.Consumers.ConsumerAddVM
 
 <h1 class="mt-2 mb-5">Update Consumer</h1>
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <form class="forms-sample" method="post" asp-controller="Consumer" asp-action="Update">
+                <form class="forms-sample" method="post" asp-controller="Consumer" asp-action="Update" enctype="multipart/form-data">
                     <div class="row">
 
-                        <input type="hidden" class="form-control" asp-for="Id">
+                        <input type="hidden" class="form-control" asp-for="Add.Id">
 
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="Name">Name</label>
-                                <input type="text" class="form-control" asp-for="Name" placeholder="Name">
+                                <label asp-for="Add.Name">Name</label>
+                                <input type="text" class="form-control" asp-for="Add.Name" placeholder="Name">
                             </div>
                         </div>
 
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="Position">Position</label>
-                                <input type="text" class="form-control" asp-for="Position" placeholder="Position">
+                                <label asp-for="Add.Position">Position</label>
+                                <input type="text" class="form-control" asp-for="Add.Position" placeholder="Position">
                             </div>
                         </div>
 
@@ -30,13 +30,26 @@
 
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label asp-for="Review">Review</label>
-                                <textarea type="text" class="form-control tinyMce" asp-for="Review" placeholder="Review"></textarea>
+                                <label asp-for="Add.Review">Review</label>
+                                <textarea type="text" class="form-control tinyMce" asp-for="Add.Review" placeholder="Review"></textarea>
                             </div>
                         </div>
 
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Add.SeminarId">Seminar</label>
+                                <select type="text" class="form-control" asp-for="Add.SeminarId" asp-items="Model.Seminars"></select>
+                            </div>
+                        </div>
 
+                        <div class="row m-1 mb-5">
+                            <input type="hidden" asp-for="Add.Image.Id">
+                            <div class="col-sm-12">
+                                <label asp-for="Add.Image">Banner Image</label>
+                                <input type="file" accept="image/*" placeholder="Banner Image" asp-for="Image" class="file-upload-default">
 
+                            </div>
+                        </div>
 
 
                     </div>
@@ -49,3 +62,6 @@
 
 
 
+@section Scripts{
+    <script src="~/admin/js/shared/file-upload.js"></script>
+}

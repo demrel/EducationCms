@@ -22,8 +22,12 @@ namespace EducationCms.Web.Extensions
             services.AddScoped<IQA, QAService>();
             services.AddScoped<ICategory, CategoryService>();
             services.AddScoped<IImageFile, ImageFileService>();
+            services.AddScoped<ITizerVideo, TizerVideoService>();
+            services.AddScoped<ISiteSetting, SiteSettingService>();
+            services.AddScoped<IMissionVission, MissionVissionSecrive>();
 
             services.AddScoped<IBlog, BlogService>();
+            services.AddScoped<IConsulting, ConsultingService>();
             services.AddScoped<IMaintence, MaintanceService>();
             services.AddScoped<ISeminar, SeminarService>();
             services.AddScoped<IFileShare, FileShareService>();

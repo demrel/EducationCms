@@ -17,7 +17,11 @@
                             @foreach (var item in Model.Banners)
                             {
                                 <tr>
-                                    <td><span style="font-weight:bold">@item.Title</span></td>
+                                    <td>
+                                        <span style="font-weight:lighter">@item.TitleFirst</span><br />
+                                        <span style="font-weight: lighter">@item.TitleSecond</span>
+
+                                    </td>
                                     <td width="46%"><img src="~/images/banner/@item.Image?.Name" alt="Banner Image" /></td>
 
                                     <td>

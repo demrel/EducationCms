@@ -1,0 +1,50 @@
+﻿@model EducationCms.Web.Areas.admin.Models.MissionVisions.MissionVissionAddVM
+
+<h1 class="mt-2 mb-5">Edit  @Model.Add.Type.ToString()</h1>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form class="forms-sample" method="post" asp-controller="MissionVission" asp-action="Create">
+                    <div class="row">
+
+                        <input type="hidden" class="form-control" asp-for="Add.Id" >
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label asp-for="Add.Title">Title</label>
+                                <input type="text" class="form-control" asp-for="Add.Title" placeholder="Title">
+                            </div>
+                        </div>
+
+
+                     
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label asp-for="Add.Description">Description</label>
+                                <textarea class="form-control" asp-for="Add.Description" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row m-1 mb-5">
+                            <div class="col-sm-6">
+                                <label asp-for="Image">Image</label>
+                                <input type="hidden" class="form-control" asp-for="Add.Image.Id">
+                                <input type="file" accept="image/*" placeholder="Banner Image" asp-for="Image" class="file-upload-default">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

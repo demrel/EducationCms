@@ -9,6 +9,7 @@ namespace EducationCms.Service.Interface
 {
     public interface IConsumer:IBase<Consumer>
     {
-       
+        Task Stared(int id);
+        Task<List<Consumer>> GetAllStared();
     }
 }

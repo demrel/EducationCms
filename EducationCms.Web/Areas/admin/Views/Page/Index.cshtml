@@ -25,6 +25,18 @@
                                         <a class="float-right m-1" href="@Url.Action("Update", "Page",new { id = item.Id})"><i class="fas fa-pencil-alt"></i></a>
 
                                         <a class="float-right m-1" href="@Url.Action("Delete", "Page",new { id = item.Id})"><i class=" fas fa-trash"></i></a>
+
+                                        <a class="float-right m-1" href="@Url.Action("MakeStared", "Page",new { id = item.Id})">
+                                            @if (item.IsStared)
+                                            {
+                                                <i class="fas fa-star text-success"></i>
+
+                                            }
+                                            else
+                                            {
+                                                <i class="far fa-star text-secondary"></i>
+                                            }
+                                        </a>
                                     </td>
                                 </tr>
                             }

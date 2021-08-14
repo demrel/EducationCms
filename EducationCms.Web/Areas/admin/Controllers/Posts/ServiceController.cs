@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Web.Areas.admin.Controllers.Posts
 {
-    public class ServiceController : BasePostController<Maintance,PostAddVM>
+    public class ServiceController : BasePostController<English,PostAddVM>
     {
         private readonly IMaintence _maintenceService;
         public ServiceController(IMapper mapper, IImageFile imageService, IWebHostEnvironment env, IMaintence maintenceService 
-            ,IBasePost<Maintance> basePost) : base(mapper, imageService, env, basePost)
+            ,IBasePost<English> basePost) : base(mapper, imageService, env, basePost)
         {
             _maintenceService = maintenceService;
         }
@@ -25,7 +25,7 @@ namespace EducationCms.Web.Areas.admin.Controllers.Posts
         [HttpPost]
         public override async Task<IActionResult> Create(PostAddVM model)
         {
-            var data = _mapper.Map<Maintance>(model.Add);
+            var data = _mapper.Map<English>(model.Add);
             data.BannerImage = await _imageService.Add(model.Image, _env.WebRootPath + "/images/posts/");
             await _maintenceService.Create(data);
             ViewBag.Title = "Add Service";
@@ -41,7 +41,7 @@ namespace EducationCms.Web.Areas.admin.Controllers.Posts
         [HttpPost]
         public override async Task<IActionResult> Update(PostAddVM model)
         {
-            var data = _mapper.Map<Maintance>(model.Add);
+            var data = _mapper.Map<English>(model.Add);
             data.BannerImage = await _imageService.Edit(model.Image, _env.WebRootPath + "/images/posts/", model.Add.Image.Id);
 
             await _maintenceService.Update(data);

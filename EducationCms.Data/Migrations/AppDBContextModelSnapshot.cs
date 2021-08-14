@@ -50,7 +50,10 @@ namespace EducationCms.Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("TitleFirst")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleSecond")
                         .HasColumnType("text");
 
                     b.Property<string>("Url")
@@ -70,6 +73,12 @@ namespace EducationCms.Data.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int?>("ImageId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsStared")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
@@ -79,9 +88,42 @@ namespace EducationCms.Data.Migrations
                     b.Property<string>("Review")
                         .HasColumnType("text");
 
+                    b.Property<int?>("SeminarId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("ImageId");
+
+                    b.HasIndex("SeminarId");
+
                     b.ToTable("Consumers");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Pages.MissionVision", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ImageId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageId");
+
+                    b.ToTable("MissionVisions");
                 });
 
             modelBuilder.Entity("EducationCms.Data.Model.Pages.Page", b =>
@@ -100,6 +142,15 @@ namespace EducationCms.Data.Migrations
                     b.Property<string>("Description3")
                         .HasColumnType("text");
 
+                    b.Property<string>("Description4")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsStared")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
@@ -110,6 +161,9 @@ namespace EducationCms.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Title3")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title4")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -133,6 +187,58 @@ namespace EducationCms.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("QuestionAnswers");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Pages.TizerVideoPlace", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("ContactText")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DescriptionFirst")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DescriptionSecond")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ImageRectId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ImageSquareId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Percent1")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Percent2")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Value1")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Value2")
+                        .HasColumnType("text");
+
+                    b.Property<string>("VideoUrl")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageRectId");
+
+                    b.HasIndex("ImageSquareId");
+
+                    b.ToTable("TizerVideoPlaces");
                 });
 
             modelBuilder.Entity("EducationCms.Data.Model.Posts.BasePost", b =>
@@ -180,6 +286,42 @@ namespace EducationCms.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.SiteSettings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("BuisnesStartTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ContactTitle")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Instagram")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Twitter")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Youtube")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SiteSettings");
                 });
 
             modelBuilder.Entity("EducationCms.Data.Model.Users.AppRole", b =>
@@ -416,17 +558,17 @@ namespace EducationCms.Data.Migrations
                     b.ToTable("Blog");
                 });
 
-            modelBuilder.Entity("EducationCms.Data.Model.Posts.FileShare", b =>
+            modelBuilder.Entity("EducationCms.Data.Model.Posts.Consulting", b =>
                 {
                     b.HasBaseType("EducationCms.Data.Model.Posts.BasePost");
 
-                    b.Property<string>("FileUrl")
+                    b.Property<string>("Content")
                         .HasColumnType("text");
 
-                    b.ToTable("FileShare");
+                    b.ToTable("Consulting");
                 });
 
-            modelBuilder.Entity("EducationCms.Data.Model.Posts.Maintance", b =>
+            modelBuilder.Entity("EducationCms.Data.Model.Posts.English", b =>
                 {
                     b.HasBaseType("EducationCms.Data.Model.Posts.BasePost");
 
@@ -444,6 +586,16 @@ namespace EducationCms.Data.Migrations
                         .HasColumnType("text");
 
                     b.ToTable("Seminar");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Posts.Summary", b =>
+                {
+                    b.HasBaseType("EducationCms.Data.Model.Posts.BasePost");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("text");
+
+                    b.ToTable("FileShare");
                 });
 
             modelBuilder.Entity("EducationCms.Data.Model.Posts.Video", b =>
@@ -465,6 +617,51 @@ namespace EducationCms.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Image");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Pages.Consumer", b =>
+                {
+                    b.HasOne("EducationCms.Data.Model.AppImage", "Image")
+                        .WithMany()
+                        .HasForeignKey("ImageId");
+
+                    b.HasOne("EducationCms.Data.Model.Posts.Seminar", "Seminar")
+                        .WithMany()
+                        .HasForeignKey("SeminarId");
+
+                    b.Navigation("Image");
+
+                    b.Navigation("Seminar");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Pages.MissionVision", b =>
+                {
+                    b.HasOne("EducationCms.Data.Model.AppImage", "Image")
+                        .WithMany()
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Image");
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Pages.TizerVideoPlace", b =>
+                {
+                    b.HasOne("EducationCms.Data.Model.AppImage", "ImageRect")
+                        .WithMany()
+                        .HasForeignKey("ImageRectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EducationCms.Data.Model.AppImage", "ImageSquare")
+                        .WithMany()
+                        .HasForeignKey("ImageSquareId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ImageRect");
+
+                    b.Navigation("ImageSquare");
                 });
 
             modelBuilder.Entity("EducationCms.Data.Model.Posts.BasePost", b =>
@@ -567,20 +764,20 @@ namespace EducationCms.Data.Migrations
                     b.Navigation("Cateogry");
                 });
 
-            modelBuilder.Entity("EducationCms.Data.Model.Posts.FileShare", b =>
+            modelBuilder.Entity("EducationCms.Data.Model.Posts.Consulting", b =>
                 {
                     b.HasOne("EducationCms.Data.Model.Posts.BasePost", null)
                         .WithOne()
-                        .HasForeignKey("EducationCms.Data.Model.Posts.FileShare", "Id")
+                        .HasForeignKey("EducationCms.Data.Model.Posts.Consulting", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EducationCms.Data.Model.Posts.Maintance", b =>
+            modelBuilder.Entity("EducationCms.Data.Model.Posts.English", b =>
                 {
                     b.HasOne("EducationCms.Data.Model.Posts.BasePost", null)
                         .WithOne()
-                        .HasForeignKey("EducationCms.Data.Model.Posts.Maintance", "Id")
+                        .HasForeignKey("EducationCms.Data.Model.Posts.English", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -590,6 +787,15 @@ namespace EducationCms.Data.Migrations
                     b.HasOne("EducationCms.Data.Model.Posts.BasePost", null)
                         .WithOne()
                         .HasForeignKey("EducationCms.Data.Model.Posts.Seminar", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EducationCms.Data.Model.Posts.Summary", b =>
+                {
+                    b.HasOne("EducationCms.Data.Model.Posts.BasePost", null)
+                        .WithOne()
+                        .HasForeignKey("EducationCms.Data.Model.Posts.Summary", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

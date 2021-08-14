@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Service.Services.Posts
 {
-    public class FileShareService : BasePostService<FileShare>,IFileShare
+    public class FileShareService : BasePostService<Summary>,IFileShare
     {
         public FileShareService(AppDBContext context) : base(context) { }
         

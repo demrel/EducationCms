@@ -40,7 +40,7 @@ namespace EducationCms.Web.Areas.admin.Controllers
         }
 
         [HttpGet]
-        public override IActionResult Create()
+        public  IActionResult Create()
         {
             return View();
         }

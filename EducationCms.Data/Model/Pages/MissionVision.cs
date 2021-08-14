@@ -12,6 +12,7 @@ namespace EducationCms.Data.Model.Pages
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+
         public int ImageId { get; set; }
         public AppImage Image { get; set; }
         public MissionVisionType Type { get; set; }

@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Data.Model.Posts
 {
-    [Table("Service")]
-    public class Maintance : BasePost
+    [Table("Consulting")]
+    public class Consulting: BasePost
     {
         public string Content { get; set; }
-        public Maintance()
+        public Consulting()
         {
-            Type = PostType.Services;
+            Type = PostType.Consulting;
         }
+    
+
     }
 }

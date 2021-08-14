@@ -16,8 +16,16 @@ namespace EducationCms.Data.Model.Pages
         public string PhoneNumber { get; set; }
         public string VideoUrl { get; set; }
 
+
+        public string Value1 { get; set; }
+        public int Percent1 { get; set; }
+
+        public string Value2 { get; set; }
+        public int Percent2 { get; set; }
+
         public int ImageSquareId { get; set; }
         public AppImage ImageSquare { get; set; }
+
         public int ImageRectId { get; set; }
         public AppImage ImageRect { get; set; }
     }

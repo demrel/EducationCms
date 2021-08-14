@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Service.Services.Posts
 {
-    public class MaintanceService : BasePostService<Maintance>,IMaintence
+    public class MaintanceService : BasePostService<English>,IMaintence
     {
         public MaintanceService(AppDBContext context) : base(context) { }
      

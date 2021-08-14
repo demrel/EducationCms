@@ -9,5 +9,6 @@ namespace EducationCms.Web.Areas.admin.Models.Pages
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsStared { get; set; }
     }
 }

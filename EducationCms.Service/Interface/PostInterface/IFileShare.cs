@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Service.Interface.PostInterface
 {
-    public interface IFileShare :IBasePost<FileShare>
+    public interface IFileShare :IBasePost<Summary>
     {
     }
 }

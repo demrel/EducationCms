@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Data.Model.Posts
 {
-    [Table("FileShare")]
-    public class FileShare :BasePost
+    [Table("Service")]
+    public class English : BasePost
     {
-        public string FileUrl { get; set; }
-        public FileShare()
+        public string Content { get; set; }
+        public English()
         {
-            Type = PostType.File;
+            Type = PostType.English;
         }
     }
 }

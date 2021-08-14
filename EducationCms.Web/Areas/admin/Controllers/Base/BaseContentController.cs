@@ -28,7 +28,7 @@ namespace EducationCms.Web.Areas.admin.Controllers
 
         public abstract Task<IActionResult> Index();
         public abstract Task<IActionResult> Create(T model);
-        public abstract IActionResult Create();
+        //public abstract IActionResult Create();
         public abstract Task<IActionResult> Update(T model);
         public abstract Task<IActionResult> Update(int id);
         public abstract Task<IActionResult> Delete(int id);

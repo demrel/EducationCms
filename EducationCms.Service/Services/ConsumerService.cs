@@ -14,10 +14,20 @@ namespace EducationCms.Service.Services
     {
         public ConsumerService(AppDBContext context) : base(context) { }
 
-      
-
-      
-
-        
+        public async Task Stared(int id)
+        {
+            var data = await _context.Consumers.FirstOrDefaultAsync(p => p.Id == id);
+            data.IsStared = !data.IsStared;
+            _context.Update(data);
+            _context.SaveChanges();
+        }
+        public new  async Task<List<Consumer>> GetAll()
+        {
+            return await _context.Set<Consumer>().Include(c=>c.Image).ToListAsync();
+        }
+        public async Task<List<Consumer>> GetAllStared()
+        {
+            return await _context.Consumers.Where(p => p.IsStared).ToListAsync();
+        }
     }
 }

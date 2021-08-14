@@ -40,7 +40,7 @@ namespace EducationCms.Web.Areas.admin.Controllers
         }
 
         [HttpGet]
-        public override IActionResult Create()
+        public  IActionResult Create()
         {
             return View();
         }
@@ -61,6 +61,14 @@ namespace EducationCms.Web.Areas.admin.Controllers
             PageModel model = _mapper.Map<PageModel>(faq);
             return View(model);
 
+        }
+
+        [HttpGet]
+        public  async Task<IActionResult> MakeStared(int id)
+        {
+             await _pageService.Stared(id);
+
+            return RedirectToAction("Index");
         }
 
         public override async Task<IActionResult> Delete(int id)

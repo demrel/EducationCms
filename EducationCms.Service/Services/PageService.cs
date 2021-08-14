@@ -14,9 +14,22 @@ namespace EducationCms.Service.Services
     {
         public PageService(AppDBContext context) : base(context) { }
 
-        public Task<Page> GetByName(string name)
+        public async Task<Page> GetByName(string name)
         {
-           return _context.Pages.FirstOrDefaultAsync(p => p.Name == name);
+           return await  _context.Pages.FirstOrDefaultAsync(p => p.Name == name);
+        }
+
+        public async Task Stared(int id)
+        {
+            var data=await  _context.Pages.FirstOrDefaultAsync(p => p.Id == id);
+            data.IsStared = !data.IsStared;
+            _context.Update(data);
+            _context.SaveChanges();
+        }
+
+        public async Task<List<Page>> GetAllStared()
+        {
+            return await _context.Pages.Where(p => p.IsStared).ToListAsync();
         }
     }
 }

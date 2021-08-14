@@ -26,9 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Helpers\" />
     <Folder Include="wwwroot\images\banner\" />
+    <Folder Include="wwwroot\images\consumer\" />
+    <Folder Include="wwwroot\images\mv\" />
+    <Folder Include="wwwroot\images\tizer\" />
   </ItemGroup>
 
 </Project>

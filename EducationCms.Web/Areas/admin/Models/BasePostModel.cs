@@ -14,9 +14,8 @@ namespace EducationCms.Web.Areas.admin.Models
         public string Description { get; set; }
         public bool IsActive { get; set; }
         public AppImageModel Image { get; set; }
+        public DateTime Time { get; set; }
 
-       
-        
-      
+
     }
 }

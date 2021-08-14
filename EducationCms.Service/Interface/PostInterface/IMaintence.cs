@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Service.Interface.PostInterface
 {
-    public interface IMaintence : IBasePost<Maintance>
+    public interface IMaintence : IBasePost<English>
     {
     }
 }

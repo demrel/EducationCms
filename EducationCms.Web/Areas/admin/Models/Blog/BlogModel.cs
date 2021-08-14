@@ -10,5 +10,6 @@ namespace EducationCms.Web.Areas.admin.Models.Blog
     {
         public string Content { get; set; }
         public int  CategoryId { get; set; }
+        public string CategoryName { get; set; }
     }
 }

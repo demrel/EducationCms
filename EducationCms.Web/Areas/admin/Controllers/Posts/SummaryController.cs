@@ -13,10 +13,10 @@ using System.Threading.Tasks;
 
 namespace EducationCms.Web.Areas.admin.Controllers.Posts
 {
-    public class EducationMaterialController : BasePostController<FileShare, FileShareAddVM>
+    public class SummaryController : BasePostController<Summary, FileShareAddVM>
     {
         private readonly IFileShare _fileShareService;
-        public EducationMaterialController(IMapper mapper, IImageFile imageService, IWebHostEnvironment env, IFileShare fileShareService,IBasePost<FileShare> basePost) 
+        public SummaryController(IMapper mapper, IImageFile imageService, IWebHostEnvironment env, IFileShare fileShareService,IBasePost<Summary> basePost) 
             : base(mapper, imageService, env,basePost)
         {
             _fileShareService = fileShareService;
@@ -32,7 +32,7 @@ namespace EducationCms.Web.Areas.admin.Controllers.Posts
         [HttpPost]
         public override async Task<IActionResult> Create(FileShareAddVM model)
         {
-            var data = _mapper.Map<FileShare>(model.Add);
+            var data = _mapper.Map<Summary>(model.Add);
             data.BannerImage = await _imageService.Add(model.Image, _env.WebRootPath + "/images/posts/");
             await _fileShareService.Create(data);
             return RedirectToAction("Index");
@@ -41,7 +41,7 @@ namespace EducationCms.Web.Areas.admin.Controllers.Posts
         [HttpPost]
         public override async Task<IActionResult> Update(FileShareAddVM model)
         {
-            var data = _mapper.Map<FileShare>(model.Add);
+            var data = _mapper.Map<Summary>(model.Add);
             data.BannerImage = await _imageService.Edit(model.Image, _env.WebRootPath + "/images/posts/", model.Add.Image.Id);
             await _fileShareService.Update(data);
             return RedirectToAction("Index");

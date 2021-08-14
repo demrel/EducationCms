@@ -9,7 +9,9 @@ namespace EducationCms.Web.Areas.admin.Models.Banners
     public class BannerModel
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string TitleFirst { get; set; }
+        public string TitleSecond { get; set; }
+
         public string Url { get; set; }
         public AppImageModel Image { get; set; }
     }

@@ -10,8 +10,15 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="Add.Title">Title</label>
-                                <input type="text" class="form-control" asp-for="Add.Title" placeholder="Title" >
+                                <label asp-for="Add.TitleFirst">Title First</label>
+                                <input type="text" class="form-control" asp-for="Add.TitleFirst" placeholder="Title">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Add.TitleSecond">Title Second</label>
+                                <input type="text" class="form-control" asp-for="Add.TitleSecond" placeholder="Title">
                             </div>
                         </div>
 
@@ -28,7 +35,6 @@
                                 <label asp-for="Image">Banner Image</label>
                                 <input type="file" accept="image/*" placeholder="Banner Image" asp-for="Image" class="file-upload-default" required>
                             </div>
-
                         </div>
 
                     </div>

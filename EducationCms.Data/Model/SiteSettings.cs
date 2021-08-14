@@ -17,6 +17,5 @@ namespace EducationCms.Data.Model
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string ContactTitle { get; set; }
-
     }
 }

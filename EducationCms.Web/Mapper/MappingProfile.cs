@@ -9,7 +9,10 @@ using EducationCms.Web.Areas.admin.Models.Blog;
 using EducationCms.Web.Areas.admin.Models.Category;
 using EducationCms.Web.Areas.admin.Models.Consumers;
 using EducationCms.Web.Areas.admin.Models.Faqs;
+using EducationCms.Web.Areas.admin.Models.MissionVisions;
 using EducationCms.Web.Areas.admin.Models.Pages;
+using EducationCms.Web.Areas.admin.Models.SIteSettings;
+using EducationCms.Web.Areas.admin.Models.TizerVideoPlaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +32,19 @@ namespace EducationCms.Web.Mapper
             Consumer();
             Blog();
             BasePost();
-
+            SiteSetting();
+            MissionVission();
+            TizerVideoPlace();
         }
+
+        private void TizerVideoPlace()
+        {
+            CreateMap<TizerVideoPlace, TizerVideoPlaceModel>()
+               .ForMember(c => c.ImageSquare, m => m.MapFrom(c => c.ImageSquare))
+               .ForMember(c => c.ImageRect, m => m.MapFrom(c => c.ImageRect))
+               .ReverseMap();
+        }
+
         private void BasePost()
         {
             CreateMap<BasePost, BasePostListModel>()
@@ -69,8 +83,21 @@ namespace EducationCms.Web.Mapper
         }
         private void Consumer()
         {
-            CreateMap<Consumer, ConsumerModel>().ReverseMap();
+            CreateMap<Consumer, ConsumerModel>()
+                .ForMember(c => c.Image, m => m.MapFrom(c => c.Image))
+                .ReverseMap();
            
+        }
+
+        private void SiteSetting()
+        {
+            CreateMap<SiteSettings, SiteSettingsModel>().ReverseMap();
+        }
+        private void MissionVission()
+        {
+            CreateMap<MissionVision, MissionVissionModel>()
+                  .ForMember(c => c.Image, m => m.MapFrom(c => c.Image))
+                  .ReverseMap();
         }
     }
 }

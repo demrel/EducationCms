@@ -25,16 +25,19 @@ namespace EducationCms.Data.Data
 
         public DbSet<BasePost> BasePosts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
-        public DbSet<Maintance> Services { get; set; }
-        public DbSet<FileShare> FileShare { get; set; }
+        public DbSet<English> Services { get; set; }
+        public DbSet<Summary> FileShare { get; set; }
         public DbSet<Video> Videos { get; set; }
         public DbSet<Seminar> Seminars { get; set; }
+        public DbSet<Consulting> Consultings { get; set; }
 
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Consumer> Consumers { get; set; }
         public DbSet<QuestionAnswer> QuestionAnswers { get; set; }
         public DbSet<Page> Pages { get; set; }
+        public DbSet<MissionVision> MissionVisions { get; set; }
+        public DbSet<TizerVideoPlace> TizerVideoPlaces { get; set; }
+        public DbSet<SiteSettings> SiteSettings { get; set; }
 
-       
     }
 }
