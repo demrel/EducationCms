@@ -30,12 +30,12 @@
                                     </td>
 
                                     <td>
-                                        <a class="float-right m-1" href="@Url.Action("Update", "Blog",new { id = item.Id})"><i class="fas fa-pencil-alt"></i></a>
-                                        <a class="float-right m-1" href="@Url.Action("ActivateDeactivate", "Blog",new { id = item.Id})">
+                                        <a class="float-right m-1" href="@Url.Action("Update",new { id = item.Id})"><i class="fas fa-pencil-alt"></i></a>
+                                        <a class="float-right m-1" href="@Url.Action("ActivateDeactivate",new { id = item.Id})">
 
                                             <i class="fas  @(item.IsActive? "fa-eye-slash":"fa-eye")"></i>
                                         </a>
-                                        <a class="float-right m-1" href="@Url.Action("Delete", "Blog",new { id = item.Id})"><i class=" fas fa-trash"></i></a>
+                                        <a class="float-right m-1" href="@Url.Action("Delete", new { id = item.Id})"><i class=" fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             }

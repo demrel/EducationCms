@@ -52,9 +52,11 @@ namespace EducationCms.Web.Controllers
             var page = await _pageService.GetByName("home");
             var mission = await _mvService.Get(Data.Enums.MissionVisionType.Mission);
             var faqs = await _faqService.GetAll();
-            var blogs = await _blogService.GetAllActive(new BlogFilter());
+            var blogs = await _blogService.GetLast(6);
             var siteSetting = await _siteSettingService.Get();
             var videos = await _videoService.GetAllActive();
+         
+
             HomeVM model = new();
             model.Banners = _mapper.Map<List<BannerModel>>(banner);
             model.StarredPage = _mapper.Map<List<PageModel>>(pagesStared);

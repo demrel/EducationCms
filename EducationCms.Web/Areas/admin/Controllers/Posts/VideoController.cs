@@ -49,11 +49,11 @@ namespace EducationCms.Web.Areas.admin.Controllers.Posts
         public override async Task<IActionResult> Update(int id)
         {
             var blog = await _videoService.GetById(id);
-            FileShareAddVM model = new()
-            {
+            FileShareAddVM model = new();
 
-                Add = _mapper.Map<FileShareModel>(blog)
-            };
+
+            model.Add = _mapper.Map<FileShareModel>(blog);
+            
             ViewBag.Title = "Update Video Post";
             return View("Areas/admin/Views/WithoutContent/Update.cshtml", model);
         }

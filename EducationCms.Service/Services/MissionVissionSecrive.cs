@@ -18,7 +18,8 @@ namespace EducationCms.Service.Services
         public async Task<MissionVision> Get(MissionVisionType type)=>
           await  _context.MissionVisions.FirstOrDefaultAsync(mv => mv.Type == type);
       
-
+        public new  async Task<List<MissionVision>> GetAll()=> await _context.MissionVisions.Include(m => m.Image).ToListAsync();
+        
 
     }
 }

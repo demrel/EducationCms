@@ -16,7 +16,13 @@ namespace EducationCms.Service.Services.Posts
 
         public async Task<List<T>> GetAllActive()
         {
-          return await  _context.Set<T>().Where(t => t.IsActive).ToListAsync();
+          return await  _context.Set<T>().Include(t=>t.BannerImage).Where(t => t.IsActive).ToListAsync();
+        }
+
+
+        public new async Task<List<T>> GetAll()
+        {
+            return await _context.Set<T>().Include(t=>t.BannerImage).Where(t => t.IsActive).ToListAsync();
         }
 
         public new async Task Create(T item)
@@ -32,6 +38,11 @@ namespace EducationCms.Service.Services.Posts
             data.IsActive = !data.IsActive;
             _context.Update(data);
             await  _context.SaveChangesAsync();
+        }
+
+        public new  async Task<T> GetById(int id)
+        {
+            return await _context.Set<T>().Include(t => t.BannerImage).FirstOrDefaultAsync(t=>t.Id==id);
         }
     }
 }

@@ -5,7 +5,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <form class="forms-sample" method="post" asp-controller="MissionVission" asp-action="Create">
+                <form class="forms-sample" method="post" asp-controller="MissionVission" asp-action="Create" enctype="multipart/form-data">
                     <div class="row">
 
 
@@ -27,20 +27,19 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label asp-for="Add.Description">Description</label>
-                                <textarea  class="form-control" asp-for="Add.Description" placeholder="Description"></textarea>
+                                <textarea class="form-control" asp-for="Add.Description" placeholder="Description"></textarea>
                             </div>
                         </div>
 
-                       
+
 
 
                         <div class="row m-1 mb-5">
                             <div class="col-sm-6">
-                                <label asp-for="Image">Image</label>
-                                <input type="file" accept="image/*" placeholder="Banner Image" asp-for="Image" class="file-upload-default">
+                                <label asp-for="Image">Banner Image</label>
+                                <input type="file" accept="image/*" placeholder="Banner Image" asp-for="Image" class="file-upload-default" >
                             </div>
                         </div>
-
 
                     </div>
                     <button type="submit" class="btn btn-success mr-2">Submit</button>

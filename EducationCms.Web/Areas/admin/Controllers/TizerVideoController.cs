@@ -28,34 +28,37 @@ namespace EducationCms.Web.Areas.admin.Controllers
         }
 
 
-
+        [HttpPost]
         public async Task<IActionResult> Create(TizerVIdeoAddVM model)
         {
-            var data = _mapper.Map<TizerVideoPlace>(model);
+            var data = _mapper.Map<TizerVideoPlace>(model.Add);
             data.ImageRect = await _imageService.Add(model.ImageRect, _env.WebRootPath + "/images/tizer/");
             data.ImageSquare= await _imageService.Add(model.ImageSquare, _env.WebRootPath + "/images/tizer/");
             await _tizerVideoService.Create(data);
             return RedirectToAction("Update");
         }
 
-        public  IActionResult Create()
+        [HttpGet]
+        public IActionResult Create()
         {
               return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Update(TizerVIdeoAddVM model)
         {
-            var data = _mapper.Map<TizerVideoPlace>(model);
+            var data = _mapper.Map<TizerVideoPlace>(model.Add);
             data.ImageRect = await _imageService.Edit(model.ImageRect, _env.WebRootPath + "/images/tizer/", model.Add.ImageRect.Id);
             data.ImageSquare = await _imageService.Edit(model.ImageSquare, _env.WebRootPath + "/images/tizer/", model.Add.ImageSquare.Id);
             await _tizerVideoService.Update(data);
             return RedirectToAction("Update");
         }
 
+        [HttpGet]
         public async Task<IActionResult> Update()
         {
-            var id = 1;
-            var data = await _tizerVideoService.GetById(id);
+           
+            var data = await _tizerVideoService.Get();
             TizerVIdeoAddVM model = new()
             {
                 Add = _mapper.Map<TizerVideoPlaceModel>(data)

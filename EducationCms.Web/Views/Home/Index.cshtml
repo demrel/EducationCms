@@ -42,7 +42,7 @@
                                     }
                                     @if (!string.IsNullOrWhiteSpace(item.TitleSecond))
                                     {
-                                         <h2>@item.TitleSecond</h2>
+                                        <h2>@item.TitleSecond</h2>
                                     }
                                     @if (!string.IsNullOrWhiteSpace(item.Url))
                                     {
@@ -107,10 +107,10 @@
                 <div class="welcome-one__left">
                     <div class="welcome-one__img-box">
                         <div class="welcome-one__img-1">
-                            <img src="~/images/tizer/@Model.TizerVideo?.ImageRect.Name">
+                            <img src="~/images/tizer/@Model.TizerVideo?.ImageRect?.Name">
                         </div>
                         <div class="welcome-one__img-2">
-                            <img src="~/images/tizer/@Model.TizerVideo?.ImageSquare.Name">
+                            <img src="~/images/tizer/@Model.TizerVideo?.ImageSquare?.Name">
                         </div>
                         <a href="@Model.TizerVideo?.VideoUrl"
                            class="welcome-one__video-btn video-popup">
@@ -198,7 +198,7 @@
 <!--Our Mission Start-->
 <section class="our-mission">
     <div class="our-mission-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-         style="background-image: url(/frontend/images/backgrounds/our-mission-bg.jpg)"></div>
+         style="background-image: url(/images/mv/@Model.MV?.Image?.Name)"></div>
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -213,58 +213,6 @@
     </div>
 </section>
 <!--Our Mission End-->
-@*<section>
-        <div class="container">
-            <div class="text-lg-start">
-                <span class="icon-tick"></span>
-                <span class="icon-magnifying-glass1"></span>
-                <span class="icon-right-arrow1"></span>
-                <span class="icon-wealth"></span>
-                <span class="icon-data-analytics"></span>
-                <span class="icon-report"></span>
-                <span class="icon-phone-ringing"></span>
-                <span class="icon-mobile-analytics"></span>
-                <span class="icon-research"></span>
-                <span class="icon-creative"></span>
-                <span class="icon-video"></span>
-                <span class="icon-help"></span>
-                <span class="icon-customer-review"></span>
-                <span class="icon-consultant"></span>
-                <span class="icon-checkmark"></span>
-                <span class="icon-bank"></span>
-                <span class="icon-protection"></span>
-                <span class="icon-travel"></span>
-                <span class="icon-software"></span>
-                <span class="icon-consulting"></span>
-                <span class="icon-group"></span>
-                <span class="icon-consulting-1"></span>
-                <span class="icon-creative-1"></span>
-                <span class="icon-analysis"></span>
-                <span class="icon-business"></span>
-                <span class="icon-global"></span>
-                <span class="icon-team1"></span>
-                <span class="icon-magnifying-glass"></span>
-                <span class="icon-shopping-cart"></span>
-                <span class="icon-right-arrow"></span>
-                <span class="icon-furnitures"></span>
-                <span class="icon-buildings"></span>
-                <span class="icon-house-design"></span>
-                <span class="icon-architect"></span>
-                <span class="icon-architect-1"></span>
-                <span class="icon-architect-2"></span>
-                <span class="icon-measure"></span>
-                <span class="icon-blueprint"></span>
-                <span class="icon-kitchen"></span>
-                <span class="icon-architect-3"></span>
-                <span class="icon-architect-4"></span>
-                <span class="icon-architect-5"></span>
-                <span class="icon-satisfaction"></span>
-                <span class="icon-team"></span>
-                <span class="icon-checklist"></span>
-                <span class="icon-outsourcing"></span>
-            </div>
-        </div>
-    </section>*@
 
 <!--Faq One Start-->
 <section class="faq-one">
@@ -274,9 +222,9 @@
             <span class="section-title__tagline">@Html.Raw(Model.Page?.Description3)</span>
         </div>
         <div class="row">
-          
+
             <div class="col-xl-6">
-                
+
                 <div class="faq-one__left">
                     @foreach (var item in Model.Faqs)
                     {
@@ -288,20 +236,21 @@
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        
-                                            @Html.Raw(item.Answer)
-                                        
+
+                                        @Html.Raw(item.Answer)
+
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
                         </div>
                     }
                 </div>
-               
-                </div>
+
+            </div>
 
 
-           
+            @if (Model.SiteSettings != null)
+            {
                 <div class="col-xl-6">
                     <div class="faq-one__right">
                         <div class="faq-one__img">
@@ -310,16 +259,63 @@
                         <div class="faq-one__bottom">
 
                             <div class="faq-one__experience-box">
-                                <h2>@Model.SiteSettings?.BuisnesStartTime</h2>
+                                <h2>@((DateTime.UtcNow.Year - Model.SiteSettings.BuisnesStartTime.Year))</h2>
                                 <h4 class="text-white">İllin Təcrübəsi</h4>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+
+        </div>
     </div>
 </section>
 <!--Faq One End-->
+<!--Review Start-->
+<section class="testimonials-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="testimonials-one__left">
+                    <div class="section-title text-left">
+                        <h2 class="section-title__title">What they are talking About</h2>
+                        <span class="section-title__tagline">Trusted by more than 4,200 customers</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="testimonials-one__right">
+                    <div class="testimonials-one__carousel owl-theme owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-3200px, 0px, 0px); transition: all 0.5s ease 0s; width: 4800px;">
+                                <div class="owl-item cloned" style="width: 370px; margin-right: 30px;">
+                                    <div class="testimonials-one__single">
+                                        <p class="testimonials-one__text">
+                                            Lorem ipsum is simply free text dolor sit amet,
+                                            consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua.
+                                        </p>
+                                        <div class="testimonials-one__client-info">
+                                            <h5 class="testimonials-one__client-name">Hester Ortiz</h5>
+                                            <p class="testimonials-one__client-title">Customer</p>
+                                        </div>
+                                        <div class="testimonials-one__client-img">
+                                            <img src="assets/images/testimonial/testimonials-1-2.png" alt="">
+                                        </div>
+                                        <div class="testimonials-one__quote"></div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span class="icon-right-arrow left"></span></button><button type="button" role="presentation" class="owl-next"><span class="icon-right-arrow"></span></button></div><div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Review End-->
 
 <!--News One Start-->
 <section class="news-one">
@@ -335,7 +331,7 @@
                     <!--News One Single-->
                     <div class="news-one__single">
                         <div class="news-one__img">
-                            <img src="~/images/posts/@Model.Blogs[i].Image.Name" alt="">
+                            <img src="~/images/posts/@Model.Blogs[i].Image?.Name" alt="">
                             <a href="/blog/@Model.Blogs[i].Title">
                                 <span class="news-one__plus"></span>
                             </a>
@@ -345,7 +341,7 @@
                                 <a href="blog-details.html">@Model.Blogs[i].Title</a>
                             </h3>
                             <p class="news-one__text">
-                              @Model.Blogs[i].Description
+                                @Model.Blogs[i].Description
                             </p>
                             <a href="/blog/@Model.Blogs[i].Title" class="news-one__btn">Ətraflı</a>
                             <div class="news-one__date-box">

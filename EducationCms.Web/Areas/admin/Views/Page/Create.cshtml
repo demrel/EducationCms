@@ -1,5 +1,14 @@
 ﻿@model EducationCms.Web.Areas.admin.Models.Pages.PageModel
+@section Style
+{
+    <style>
+        select {
+            font-family: icomoon !important;
+            font-size: 25px !important;
+        }
+    </style>
 
+}
 <h1 class="mt-2 mb-5">Add Page</h1>
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
@@ -82,58 +91,56 @@
                             </div>
                         </div>
 
-
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label asp-for="Icon">Icon</label>
                                 <select class="form-control" asp-for="Icon">
-                                    
-                                    <option value="icon-tick"><span class="icon-tick"></span>                     </option>
-                                    <option value="icon-magnifying-glass1"><span class="icon-magnifying-glass1"></span>        </option>
-                                    <option value="icon-right-arrow1"><span class="icon-right-arrow1"></span>             </option>
-                                    <option value="icon-wealth"><span class="icon-wealth"></span>                   </option>
-                                    <option value="icon-data-analytics"><span class="icon-data-analytics"></span>           </option>
-                                    <option value="icon-report"><span class="icon-report"></span>                   </option>
-                                    <option value="icon-phone-ringing"><span class="icon-phone-ringing"></span>            </option>
-                                    <option value="icon-mobile-analytics"><span class="icon-mobile-analytics"></span>         </option>
-                                    <option value="icon-research"><span class="icon-research"></span>                 </option>
-                                    <option value="icon-creative"><span class="icon-creative"></span>                 </option>
-                                    <option value="icon-video"><span class="icon-video"></span>                    </option>
-                                    <option value="icon-help"><span class="icon-help"></span>                     </option>
-                                    <option value="icon-customer-review"></span<span class="icon-customer-review"></span>          </option>
-                                    <option value="icon-consultant">    <span class="icon-consultant"></span>               </option>
-                                    <option value="icon-checkmark">   <span class="icon-checkmark"></span>                </option>
-                                    <option value="icon-bank">        <span class="icon-bank"></span>                     </option>
-                                    <option value="icon-protection">    <span class="icon-protection"></span>               </option>
-                                    <option value="icon-travel">        <span class="icon-travel"></span>                   </option>
-                                    <option value="icon-software">      <span class="icon-software"></span>                 </option>
-                                    <option value="icon-consulting">    <span class="icon-consulting"></span>               </option>
-                                    <option value="icon-group">         <span class="icon-group"></span>                    </option>
-                                    <option value="icon-consulting-1">  <span class="icon-consulting-1"></span>             </option>
-                                    <option value="icon-creative-1">    <span class="icon-creative-1"></span>               </option>
-                                    <option value="icon-analysis">      <span class="icon-analysis"></span>                 </option>
-                                    <option value="icon-business">      <span class="icon-business"></span>                 </option>
-                                    <option value="icon-global">        <span class="icon-global"></span>                   </option>
-                                    <option value="icon-team1">         <span class="icon-team1"></span>                    </option>
-                                    <option value="icon-magnifying-glass"><span class="icon-magnifying-glass"></span>         </option>
-                                    <option value="icon-shopping-cart"> <span class="icon-shopping-cart"></span>            </option>
-                                    <option value="icon-right-arrow">   <span class="icon-right-arrow"></span>              </option>
-                                    <option value="icon-furnitures">    <span class="icon-furnitures"></span>               </option>
-                                    <option value="icon-buildings">     <span class="icon-buildings"></span>                </option>
-                                    <option value="icon-house-design">  <span class="icon-house-design"></span>             </option>
-                                    <option value="icon-architect">    <span class="icon-architect"></span>                </option>
-                                    <option value="icon-architect-1">   <span class="icon-architect-1"></span>              </option>
-                                    <option value="icon-architect-2">   <span class="icon-architect-2"></span>              </option>
-                                    <option value="icon-measure">       <span class="icon-measure"></span>                  </option>
-                                    <option value="icon-blueprint">     <span class="icon-blueprint"></span>                </option>
-                                    <option value="icon-kitchen">       <span class="icon-kitchen"></span>                  </option>
-                                    <option value="icon-architect-3">   <span class="icon-architect-3"></span>              </option>
-                                    <option value="icon-architect-4">  <span class="icon-architect-4"></span>              </option>
-                                    <option value="icon-architect-5">   <span class="icon-architect-5"></span>              </option>
-                                    <option value="icon-satisfaction">  <span class="icon-satisfaction"></span>             </option>
-                                    <option value="icon-team">          <span class="icon-team"></span>                     </option>
-                                    <option value="icon-checklist">     <span class="icon-checklist"></span>                </option>
-                                    <option value="icon-outsourcing">   <span class="icon-outsourcing"></span>              </option>
+                                    <option value="icon-magnifying-glass">       &#xe900;                                         </option>
+                                    <option value="icon-shopping-cart">         &#xe901;                                         </option>
+                                    <option value="icon-right-arrow">          &#xe902;                                         </option>
+                                    <option value="icon-furnitures">              &#xe903;                                         </option>
+                                    <option value="icon-buildings">               &#xe904;                                         </option>
+                                    <option value="icon-house-design">            &#xe905;                                              </option>
+                                    <option value="icon-architect">              &#xe906;                                                </option>
+                                    <option value="icon-architect-1">            &#xe907;                                           </option>
+                                    <option value="icon-architect-2">             &#xe908;                                             </option>
+                                    <option value="icon-measure">                &#xe909;                                            </option>
+                                    <option value="icon-blueprint">              &#xe90a;                                         </option>
+                                    <option value="icon-kitchen">                &#xe90b;                                         </option>
+                                    <option value="icon-architect-3">             &#xe90c;                                         </option>
+                                    <option value="icon-architect-4">            &#xe90d;                                       </option>
+                                    <option value="icon-architect-5">           &#xe90e;                                       </option>
+                                    <option value="icon-satisfaction">          &#xe90f;                                         </option>
+                                    <option value="icon-team">             &#xe910;                                         </option>
+                                    <option value="icon-checklist">               &#xe911;                                         </option>
+                                    <option value="icon-outsourcing">             &#xe912;                                         </option>
+                                    <option value="icon-tick">                  &#xe913;                                         </option>
+                                    <option value="icon-magnifying-glass1">       &#xe914;                                         </option>
+                                    <option value="icon-right-arrow1">            &#xe915;                                         </option>
+                                    <option value="icon-wealth">              &#xe916;                                         </option>
+                                    <option value="icon-data-analytics">          &#xe917;                                         </option>
+                                    <option value="icon-report">              &#xe918;                                         </option>
+                                    <option value="icon-phone-ringing">           &#xe919;                                         </option>
+                                    <option value="icon-mobile-analytics">        &#xe91a;                                         </option>
+                                    <option value="icon-research">                &#xe91b;                                          </option>
+                                    <option value="icon-creative">                &#xe91c;                                          </option>
+                                    <option value="icon-video">                   &#xe91d;                                          </option>
+                                    <option value="icon-help">                    &#xe91e;                                          </option>
+                                    <option value="icon-customer-review">         &#xe91f;                                          </option>
+                                    <option value="icon-consultant">              &#xe920;                                         </option>
+                                    <option value="icon-checkmark">               &#xe921;                                          </option>
+                                    <option value="icon-bank">                   &#xe922;                                          </option>
+                                    <option value="icon-protection">              &#xe923;                                          </option>
+                                    <option value="icon-travel">                  &#xe924;                                          </option>
+                                    <option value="icon-software">               &#xe925;                                          </option>
+                                    <option value="icon-consulting">              &#xe926;                                          </option>
+                                    <option value="icon-group">                  &#xe927;                                         </option>
+                                    <option value="icon-consulting-1">            &#xe928;                                          </option>
+                                    <option value="icon-creative-1">              &#xe929;                                          </option>
+                                    <option value="icon-analysis">               &#xe92a;                                          </option>
+                                    <option value="icon-business">               &#xe92b;                                          </option>
+                                    <option value="icon-global">                  &#xe92c;                                          </option>
+                                    <option value="icon-team1">                  &#xe92d;                                           </option>
                                 </select>
                             </div>
                         </div>

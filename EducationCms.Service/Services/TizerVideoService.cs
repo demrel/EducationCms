@@ -17,7 +17,7 @@ namespace EducationCms.Service.Services
            
         }
 
-        public async Task<TizerVideoPlace> Get()=> await _context.TizerVideoPlaces.FirstOrDefaultAsync();
+        public async Task<TizerVideoPlace> Get()=> await _context.TizerVideoPlaces.Include(t=>t.ImageRect).Include(t=>t.ImageSquare).FirstOrDefaultAsync();
         
     }
 }

@@ -25,17 +25,17 @@ namespace EducationCms.Web.Areas.admin.Controllers
             _env = env;
             _missionVissionService = missionVissionService;
         }
-
-        public  async Task<IActionResult> Create(MissionVissionAddVM model)
+        [HttpPost]
+        public async Task<IActionResult> Create(MissionVissionAddVM model)
         {
-            var data = _mapper.Map<MissionVision>(model);
+            var data = _mapper.Map<MissionVision>(model.Add);
             data.Image = await _imageService.Add(model.Image, _env.WebRootPath + "/images/mv/");
 
             await _missionVissionService.Create(data);
             return RedirectToAction("Index");
         }
-
-        public  IActionResult Create()
+        [HttpGet]
+        public IActionResult Create()
         {
             return View();
         }
@@ -51,7 +51,7 @@ namespace EducationCms.Web.Areas.admin.Controllers
             };
             return View(model);
         }
-
+        [HttpPost]
         public async Task<IActionResult> Update(MissionVissionAddVM model)
         {
             var data = _mapper.Map<MissionVision>(model.Add);
@@ -62,6 +62,7 @@ namespace EducationCms.Web.Areas.admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
             var data = await _missionVissionService.GetById(id);

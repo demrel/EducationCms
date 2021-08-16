@@ -21,19 +21,20 @@ namespace EducationCms.Web.Areas.admin.Controllers
             _siteSettingService = siteSettingService;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Create(SiteSettingsModel model)
         {
             var data = _mapper.Map<SiteSettings>(model);
             await _siteSettingService.Create(data);
             return RedirectToAction("Update");
         }
-
+        [HttpGet]
         public  IActionResult Create()
         {
             return View();
         }
 
-    
+        [HttpPost]
         public async  Task<IActionResult> Update(SiteSettingsModel model)
         {
             var data = _mapper.Map<SiteSettings>(model);
@@ -41,7 +42,7 @@ namespace EducationCms.Web.Areas.admin.Controllers
             await _siteSettingService.Update(data);
             return RedirectToAction("Update");
         }
-
+        [HttpGet]
         public async Task<IActionResult> Update()
         {
             var id = 1;

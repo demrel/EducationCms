@@ -20,6 +20,7 @@ namespace EducationCms.Service.Services.Posts
             return await _context.Blogs.Where(b => b.CategoryId == id && b.IsActive).Take(take).ToListAsync();
         }
 
+
         public async Task<List<Blog>> GetAllActive(BlogFilter filter)
         {
             var query =  _context.Blogs.Where(b => b.IsActive);
@@ -33,6 +34,14 @@ namespace EducationCms.Service.Services.Posts
 
             return await query.ToListAsync();
         }
+
+
+        public async Task<List<Blog>> GetLast(int take)
+        {
+            var query = _context.Blogs.Include(b=>b.BannerImage).Where(b => b.IsActive).Take(take);
+            return await query.ToListAsync();
+        }
+
 
         public async  Task<int> Count(BlogFilter filter)
         {
@@ -61,6 +70,10 @@ namespace EducationCms.Service.Services.Posts
              
         }
 
-        
+        public new async Task<Blog> GetById(int id)
+        {
+            return await _context.Set<Blog>().Include(b=>b.BannerImage).FirstOrDefaultAsync(b=>b.Id==id);
+        }
+
     }
 }

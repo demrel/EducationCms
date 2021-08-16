@@ -7,6 +7,7 @@ namespace EducationCms.Web.Areas.admin.Models.SIteSettings
 {
     public class SiteSettingsModel
     {
+        
         public int Id { get; set; }
         public string Facebook { get; set; }
         public string Youtube { get; set; }

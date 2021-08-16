@@ -14,5 +14,6 @@ namespace EducationCms.Service.Interface.PostInterface
         Task<List<Blog>> GetByCategory(int id, int take);
         Task<List<Blog>> GetAllActive(BlogFilter filter);
         Task<int> Count(BlogFilter filter);
+        Task<List<Blog>> GetLast(int take);
     }
 }

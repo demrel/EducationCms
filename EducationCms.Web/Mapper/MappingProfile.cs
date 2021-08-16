@@ -9,6 +9,7 @@ using EducationCms.Web.Areas.admin.Models.Blog;
 using EducationCms.Web.Areas.admin.Models.Category;
 using EducationCms.Web.Areas.admin.Models.Consumers;
 using EducationCms.Web.Areas.admin.Models.Faqs;
+using EducationCms.Web.Areas.admin.Models.Materials;
 using EducationCms.Web.Areas.admin.Models.MissionVisions;
 using EducationCms.Web.Areas.admin.Models.Pages;
 using EducationCms.Web.Areas.admin.Models.SIteSettings;
@@ -49,6 +50,12 @@ namespace EducationCms.Web.Mapper
         {
             CreateMap<BasePost, BasePostListModel>()
                .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage.Name));
+
+            CreateMap<Video, BasePostModel>()
+               .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage.Name)).ReverseMap();
+
+            CreateMap<Video, FileShareModel>()
+              .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage.Name)).ReverseMap();
         }
         private void Blog()
         {

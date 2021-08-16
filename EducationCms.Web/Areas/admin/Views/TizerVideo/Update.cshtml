@@ -18,6 +18,12 @@
                         </div>
 
 
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Add.VideoUrl">Video Url </label>
+                                <input type="text" class="form-control" asp-for="Add.VideoUrl" placeholder="Video Url">
+                            </div>
+                        </div>
 
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -40,6 +46,7 @@
                             </div>
                         </div>
 
+
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label asp-for="Add.PhoneNumber">Phone Number </label>
@@ -47,23 +54,62 @@
                             </div>
                         </div>
 
-                        <div class="row m-1 mb-5">
-                            <div class="col-sm-6">
-                                <label asp-for="ImageRect">Image Up</label>
-                                <input type="hidden" class="form-control" asp-for="Add.ImageRect.Id">
+                        <div class="row col-sm-12">
 
-                                <input type="file" accept="image/*" placeholder="Banner Image" asp-for="ImageRect" class="file-upload-default" required>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="Add.Value1">First Percent Name</label>
+                                    <input type="text" class="form-control" asp-for="Add.Value1" placeholder="First Percent Name" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="Add.Percent1">First Percent value</label>
+                                    <input type="number" class="form-control" asp-for="Add.Percent1" placeholder="First Percent value" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="Add.Value2">Second Percent Name</label>
+                                    <input type="text" class="form-control" asp-for="Add.Value2" placeholder="Second Percent Name" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="Add.Percent2">Second Percent value</label>
+                                    <input type="number" class="form-control" asp-for="Add.Percent2" placeholder="Second Percent value" />
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row m-1 mb-5">
-                            <div class="col-sm-6">
-                                <label asp-for="ImageSquare">Image Down</label>
-                                <input type="hidden" class="form-control" asp-for="Add.ImageSquare.Id">
 
-                                <input type="file" accept="image/*" placeholder="Banner Image" asp-for="ImageSquare" class="file-upload-default" required>
+
+
+                        <div class="row col-sm-12">
+
+                            <div class="row m-1 mb-5">
+                                <div class="col-sm-6">
+                                    <label asp-for="ImageRect">Image Up</label>
+                                    <input type="hidden" class="form-control" asp-for="Add.ImageRect.Id">
+
+                                    <input type="file" accept="image/*" placeholder="Banner Image" asp-for="ImageRect" class="file-upload-default" >
+                                </div>
+                            </div>
+
+                            <div class="row m-1 mb-5">
+                                <div class="col-sm-6">
+                                    <label asp-for="ImageSquare">Image Down</label>
+                                    <input type="hidden" class="form-control" asp-for="Add.ImageSquare.Id">
+
+                                    <input type="file" accept="image/*" placeholder="Banner Image" asp-for="ImageSquare" class="file-upload-default" >
+                                </div>
                             </div>
                         </div>
+
 
 
 
