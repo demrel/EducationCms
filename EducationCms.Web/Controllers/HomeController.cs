@@ -31,6 +31,7 @@ namespace EducationCms.Web.Controllers
         private readonly IBlog _blogService;
         private readonly ISiteSetting _siteSettingService;
         private readonly IVideo _videoService;
+      
         public HomeController(IMapper mapper, IBanner bannerService, IPage pageService, ITizerVideo tizerVideoService, IMissionVission mvService, IQA faqService, IBlog blogService, ISiteSetting siteSettingService, IVideo videoService)
         {
             _mapper = mapper;
@@ -66,7 +67,7 @@ namespace EducationCms.Web.Controllers
             model.Faqs = _mapper.Map<List<FaqModel>>(faqs);
             model.Blogs = _mapper.Map<List<BlogModel>>(blogs);
             model.SiteSettings = _mapper.Map<SiteSettingsModel>(siteSetting);
-            model.LastVideos = _mapper.Map < List<BasePostModel>>(videos);
+            model.LastVideos = _mapper.Map <List<BasePostModel>>(videos);
             return View(model);
         }
     }

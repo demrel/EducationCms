@@ -49,13 +49,13 @@ namespace EducationCms.Web.Mapper
         private void BasePost()
         {
             CreateMap<BasePost, BasePostListModel>()
-               .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage.Name));
+               .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage));
 
             CreateMap<Video, BasePostModel>()
-               .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage.Name)).ReverseMap();
+               .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage)).ReverseMap();
 
             CreateMap<Video, FileShareModel>()
-              .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage.Name)).ReverseMap();
+              .ForMember(c => c.Image, m => m.MapFrom(c => c.BannerImage)).ReverseMap();
         }
         private void Blog()
         {
